@@ -90,9 +90,8 @@ const displayNewsDetails = news => {
     console.log(news);
     const modalTitle = document.getElementById('newsModalDetailsLabel');
     modalTitle.innerText = ;
-    const phoneDetails = document.getElementById('newsModalDetailsLabel');
-    phoneDetails.innerHTML = arr_item.`
-    <p> Release Date: ${phone.releaseDate ? phone.releaseDate : 'no releaseDate found'}</p>
+    const newsDetails = document.getElementById('newsModalDetailsLabel');
+    
     `;
 }
  */
