@@ -59,3 +59,6 @@ displayNews01 = news => {
 
 }
 loadNews01();
+
+/* ------- modal ----- */
+
