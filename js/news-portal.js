@@ -31,32 +31,42 @@ const loadNewsCatagory = async (id) => {
     const res = await fetch(url);
     const data = await res.json();
     displayNews01(data.data);
-    console.log(data.data)
+
 
 }
 
-displayNews01 = news => {
-    const countNews = document.getElementById('count-news')
-    const newsContainer01 = document.getElementById('news-categories-01');
-    news.forEach(arr_item => {
-        const newsDiv = document.createElement('div');
-        newsDiv.classList.add('col');
-        newsDiv.innerHTML = `
-        
-        <div class="card h-100">
-          <img src="${arr_item.image_url}" class="card-img-top" alt="...">
-          <div class="card-body mb-2">
-            <h5 class="card-title">${arr_item.title}</h5>
-            <p class="card-text">${arr_item.details.slice(0, 70)}...</p>
-            <img class="rounded-circle w-25"src="${arr_item.author.img}"
-            <p class="fst-italic"> ${arr_item.author.name}</p>
-            <p> <i class="fa-regular fa-eye"></i> ${arr_item.total_view}</p>
 
-            <button onclick="" class="btn btn-primary"> <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-      </div>
+displayNews01 = news => {
+    news.sort(function (a, b) {
+        return (b.total_view) - (a.total_view);
+    });
+    const countNews = document.getElementById('count-news')
+    countNews.innerHTML = `
     
+    <h1> ${news.length} news catagory found </h1>
+
     `;
+
+    const newsContainer01 = document.getElementById('news-categories-01');
+    newsContainer01.innerHTML = ``;
+    news.forEach(arr_item => {
+        console.log(arr_item);
+        const newsDiv = document.createElement('div');
+        newsDiv.innerHTML = `
+        <div class="card h-100">
+        <img src="${arr_item.image_url}" class="card-img-top" alt="...">
+        <div class="card-body mb-2">
+          <h5 class="card-title">${arr_item.title}</h5>
+          <p class="card-text">${arr_item.details.slice(0, 70)}...</p>
+          <img class="rounded-circle w-25"src="${arr_item.author.img}"
+          <p class="fst-italic"> ${arr_item.author.name}</p>
+          <p> <i class="fa-regular fa-eye"></i> ${arr_item.total_view}</p>
+          <button onclick="" class="btn btn-primary"> <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>  
+      `;
+
+
         newsContainer01.appendChild(newsDiv);
     });
 
