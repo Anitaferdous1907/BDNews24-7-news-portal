@@ -17,12 +17,12 @@
     <header>
         <!--   navbar start -->
 
-        <section>
-            <nav class=" p-2 navbar navbar-expand-lg bg-light ">
+        <section class="container">
+            <nav class=" p-2 navbar navbar-expand-lg bg-light d-flex justify-content-between">
 
                 <div>
-                    <a class="d-flex justify-content-between nav-link active fs-4 text fw-bold text-primary "
-                        aria-current="page" href="#">BDNews24/7</a>
+                    <a class="nav-link active fs-4 text fw-bold text-primary " aria-current="page"
+                        href="#">BDNews24/7</a>
 
                 </div>
                 <div class="d-flex justify-content-end gap-3">
@@ -30,7 +30,7 @@
                         <a class="nav-link " href="#">News</a>
                     </div>
                     <div>
-                        <a class="nav-link" href="#"> Blog</a>
+                        <a class="nav-link  fw-semibold text-primary" target="_blank" href="blog/index.html"> Blog</a>
                     </div>
                 </div>
             </nav>
@@ -42,8 +42,8 @@
     <main class="container">
         <!-- news heading section -->
         <section class="d-flex justify-content-between">
-            <div id="news-categories-container">
-                <nav class="nav d-flex justify-content-between ">
+            <div id="news-categories-container" class="d-flex justify-content-between">
+                <nav class="nav  ">
                 </nav>
             </div>
         </section>
@@ -60,11 +60,11 @@
         </div>
 
         <section class="mb-5 p-2 d-flex justify-content-between">
-            <div><button type="submit" class="btn btn-primary">Submit</button>
-                <input type="text">
+            <div class="fw-semibold">Sort by default view:
+                <input type="text" placeholder="Default">
             </div>
             <div><button type="submit" class="btn btn-primary">Todays pick</button>
-                <button type="submit" class="btn btn-light text-primary">Trending</button>
+                <button hr type="submit" class="btn btn-light text-primary">Trending</button>
             </div>
         </section>
 

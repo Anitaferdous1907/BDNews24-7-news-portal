@@ -13,10 +13,10 @@ const displayNews = news => {
         newsNav.classList.add('nav');
         newsNav.innerHTML = `
         
-        <li class="nav-item">
+        <pclass="nav-item" >
     <a class="nav-link" href="#">${arr_item.category_name}</a>
-</li>
-    `;
+
+    </p>`;
         newsContainer.appendChild(newsNav);
     })
 }
