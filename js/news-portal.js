@@ -5,7 +5,7 @@ const loadNews = async () => {
     displayNews(data.data.news_category)
 }
 const displayNews = news => {
-    //console.log(news);
+    console.log(news);
 
     const newsContainer = document.getElementById('news-categories-container');
     news.forEach(arr_item => {
@@ -14,7 +14,7 @@ const displayNews = news => {
         newsNav.innerHTML = `
         
         <pclass="nav-item" >
-    <a class="nav-link" href="#">${arr_item.category_name}</a>
+    <a onclick="loadNewsCatagory('${arr_item.category_id}')" class="nav-link" href="#">${arr_item.category_name}</a>
 
     </p>`;
         newsContainer.appendChild(newsNav);
@@ -25,15 +25,18 @@ loadNews();
 
 /* news 01 */
 
-const loadNews01 = async () => {
-    const url = `https://openapi.programming-hero.com/api/news/category/01`
+const loadNewsCatagory = async (id) => {
+    const url = `https://openapi.programming-hero.com/api/news/category/${id}`
+
     const res = await fetch(url);
     const data = await res.json();
     displayNews01(data.data);
+    console.log(data.data)
+
 }
 
 displayNews01 = news => {
-    //console.log(phones)
+    const countNews = document.getElementById('count-news')
     const newsContainer01 = document.getElementById('news-categories-01');
     news.forEach(arr_item => {
         const newsDiv = document.createElement('div');
@@ -58,7 +61,10 @@ displayNews01 = news => {
     });
 
 }
-loadNews01();
+document.getElementById('searching').addEventListener('click', function () {
+
+})
+loadNewsCatagory('08');
 
 /* ------- modal ----- */
 
