@@ -30,7 +30,7 @@
                         <a class="nav-link " href="#">News</a>
                     </div>
                     <div>
-                        <a class="nav-link  fw-semibold text-primary" target="_blank" href="blog/index.html"> Blog</a>
+                        <a class="nav-link  fw-semibold text-primary" target="_blank" href="blog/blog.html"> Blog</a>
                     </div>
                 </div>
             </nav>
@@ -72,16 +72,42 @@
                 <button hr type="submit" class="btn btn-light text-primary">Trending</button>
             </div>
         </section>
-
-        <!--  card section -->
         <section>
 
 
-            <div id="news-categories-01" class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Modal -->
+            <section>
+
+                <!-- Modal -->
+                <div class="modal fade" id="newsModalDetails" tabindex="-1" aria-labelledby="newsModalDetailsLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="newsModalDetailsLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div id="phone-details" class="modal-body">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--  card section -->
+            <section>
+
+
+                <div id="news-categories-01" class="row row-cols-1 row-cols-md-3 g-4">
 
 
 
-        </section>
+            </section>
     </main>
     <!--  script link -->
     <script src="js/news-portal.js"></script>

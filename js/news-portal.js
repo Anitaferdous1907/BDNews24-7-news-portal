@@ -43,7 +43,7 @@ displayNews01 = news => {
     const countNews = document.getElementById('count-news')
     countNews.innerHTML = `
     
-    <h1> ${news.length} news catagory found </h1>
+    <h1> ${news.length} News Catagory Found </h1>
 
     `;
 
@@ -57,13 +57,16 @@ displayNews01 = news => {
         <img src="${arr_item.image_url}" class="card-img-top" alt="...">
         <div class="card-body mb-2">
           <h5 class="card-title">${arr_item.title}</h5>
-          <p class="card-text">${arr_item.details.slice(0, 70)}...</p>
+          <p class="card-text">${arr_item.details.slice(0, 150)}...</p>
           <img class="rounded-circle w-25"src="${arr_item.author.img}"
           <p class="fst-italic"> ${arr_item.author.name}</p>
           <p> <i class="fa-regular fa-eye"></i> ${arr_item.total_view}</p>
-          <button onclick="" class="btn btn-primary"> <i class="fa-solid fa-arrow-right"></i></button>
+          
+          <button onclick="newsModalDetails" class="btn btn-primary"> <i class="fa-solid fa-arrow-right" data-bs-toggle="modal" data-bs-target="#newsModalDetails"></i></button>
         </div>
     </div>  
+
+   
       `;
 
 
@@ -71,10 +74,28 @@ displayNews01 = news => {
     });
 
 }
-document.getElementById('searching').addEventListener('click', function () {
 
-})
 loadNewsCatagory('08');
 
+
 /* ------- modal ----- */
+/* const loadNewsDetails = async id => {
+    const url = `https://openapi.programming-hero.com/api/news/${news_id} `;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayNewsDetails(data.data);
+}
+
+const displayNewsDetails = news => {
+    console.log(news);
+    const modalTitle = document.getElementById('newsModalDetailsLabel');
+    modalTitle.innerText = ;
+    const phoneDetails = document.getElementById('newsModalDetailsLabel');
+    phoneDetails.innerHTML = arr_item.`
+    <p> Release Date: ${phone.releaseDate ? phone.releaseDate : 'no releaseDate found'}</p>
+    `;
+}
+ */
+
+
 
